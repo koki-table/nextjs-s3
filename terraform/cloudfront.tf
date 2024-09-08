@@ -1,3 +1,5 @@
+# cloudfront
+
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name              = aws_s3_bucket.website_bucket.bucket_regional_domain_name
@@ -25,6 +27,12 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     min_ttl                = 0
     default_ttl            = 3600
     max_ttl                = 86400
+
+    lambda_function_association {
+    event_type   = "origin-request"
+    lambda_arn   = aws_lambda_function.edge.qualified_arn
+    include_body = false
+  }
   }
 
   price_class = "PriceClass_100"
