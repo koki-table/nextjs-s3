@@ -1,3 +1,5 @@
+#s3 
+
 resource "aws_s3_bucket" "website_bucket" {
 # バケット名を指定しないと自動で命名して生成してくれるため
 #   bucket = var.frontend_bucket
