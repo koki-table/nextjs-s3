@@ -1,3 +1,8 @@
+## Next.js SG をTerraformでAWS S3とCloudFrontにデプロイするサンプル
+Next.js SG はルートごとに index.html を生成するため lambda@edge にてリダイレクト処理を実装している
+
+---
+
 [shadcn/ui サンプル](https://ui.shadcn.com/docs/installation/next)
 
 
